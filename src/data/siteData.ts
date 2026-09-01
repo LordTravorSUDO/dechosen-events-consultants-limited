@@ -20,7 +20,7 @@ export const COMPANY_INFO = {
   shortName: "D'E CHOSEN",
   slogan: "Chosen for excellence, trained to excel.",
   consultancySlogan: "Operate smarter, serve better and profit bigger.",
-  tagline: "Integrated Hospitality, Culinary Education, Event Management & Operational Consultancy",
+  tagline: "Integrated Hospitality, Culinary Education, Event Management and Operational Consultancy",
   
   /* 🖼️ CUSTOM LOGO SETUP:
    * To add your own company logo:
@@ -33,16 +33,16 @@ export const COMPANY_INFO = {
   /* 📞 PERSONALIZED CONTACT INFORMATION (Replace with your actual contact info): */
   phonePlaceholder: "+256 752345858 / +256 767757802", // Your primary phone numbers
   whatsappPlaceholder: "+256 752345858",                 // Your WhatsApp number (country code required)
-  emailPlaceholder: "info@dechosenevents.com",              // Your official email address
+  emailPlaceholder: "dechosenevents@gmail.com",              // Your official email address
   addressPlaceholder: "Mpala, Entebbe Road, Uganda",         // Company headquarters physical location
   officeHours: "Monday - Saturday: 8:00 AM - 6:00 PM | Sunday: By Appointment",
   
   /* 🌐 SOCIAL MEDIA LINKS (Replace with your official account URLs): */
   socials: {
     facebook: "https://facebook.com/your-page",
-    instagram: "https://instagram.com/your-handle",
-    tiktok: "https://tiktok.com/@your-handle",
-    linkedin: "https://linkedin.com/company/your-company",
+    instagram: "https://www.instagram.com/dechosenevents/",
+    tiktok: "https://www.tiktok.com/@dechosenevents",
+    linkedin: "https://www.linkedin.com/in/yiga-edward-peter-49b09b433/",
     youtube: "https://youtube.com/@your-channel"
   }
 };
@@ -493,30 +493,30 @@ export const CEO_PROFILE = {
 export const TESTIMONIALS_PLACEHOLDERS: Testimonial[] = [
   {
     id: 'test-1',
-    name: 'CLIENT TESTIMONIAL PLACEHOLDER',
+    name: 'MS. MULINDWA THERESA MARIE',
     role: 'Corporate Communications Director',
     company: 'International Diplomatic Mission',
     comment: 'D\'E Chosen handled our diplomatic gala dinner flawlessly. The culinary presentation and server etiquette set a standard of corporate sophistication we had not experienced locally before.',
     rating: 5,
-    image: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=200&q=80'
+    image: ''
   },
   {
     id: 'test-2',
-    name: 'CLIENT TESTIMONIAL PLACEHOLDER',
+    name: 'MS.ATUHURRA OLIVIA',
     role: 'Boutique Lodge Investor',
     company: 'Entebbe Hospitality Group',
     comment: 'Chef Peter and his consultancy team restructured our kitchen workflow and menu pricing. Within 90 days, our food cost dropped by 18% while guest satisfaction ratings reached record highs.',
     rating: 5,
-    image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&q=80'
+    image: ''
   },
   {
     id: 'test-3',
-    name: 'CLIENT TESTIMONIAL PLACEHOLDER',
+    name: 'KATUMBA MARVIN',
     role: 'Graduate Student',
     company: 'Dechosen Culinary School Alumna',
     comment: 'The Professional Culinary Arts program gave me real practical confidence. The kitchen discipline, food chemistry lessons, and waste management modules prepared me directly for my current Sous Chef role.',
     rating: 5,
-    image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=200&q=80'
+    image: ''
   }
 ];
 
