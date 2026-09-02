@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
-import { PageId } from './types';
+import { Routes, Route } from 'react-router-dom';
+import { ROUTES } from './routes';
+import { ScrollToTop } from './components/ScrollToTop';
 import { Header } from './components/Header';
 import { Footer } from './components/Footer';
 import { AppointmentModal } from './components/AppointmentModal';
@@ -13,95 +15,98 @@ import { FacilityCleaningPage } from './pages/FacilityCleaningPage';
 import { ConsultancyPage } from './pages/ConsultancyPage';
 import { CEOPage } from './pages/CEOPage';
 import { ContactPage } from './pages/ContactPage';
+import { NotFoundPage } from './pages/NotFoundPage';
 
 export default function App() {
-  const [activePage, setActivePage] = useState<PageId>('home');
   const [isBookingOpen, setIsBookingOpen] = useState<boolean>(false);
-  const [bookingDefaultService, setBookingDefaultService] = useState<string>('Hospitality Business Consultancy');
-
-  const handleNavigate = (page: PageId) => {
-    setActivePage(page);
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
+  const [bookingDefaultService, setBookingDefaultService] = useState<string>(
+    'Hospitality Business Consultancy'
+  );
 
   const handleOpenBooking = (defaultService?: string) => {
-    if (defaultService) {
-      setBookingDefaultService(defaultService);
-    }
+    if (defaultService) setBookingDefaultService(defaultService);
     setIsBookingOpen(true);
   };
 
   return (
     <div className="min-h-screen flex flex-col bg-[#F4F6F8] font-sans antialiased selection:bg-[#D99B26] selection:text-slate-950">
-      
+
+      {/* Scroll to top on every route change */}
+      <ScrollToTop />
+
       {/* Sticky Global Header */}
-      <Header
-        activePage={activePage}
-        onNavigate={handleNavigate}
-        onOpenBooking={() => handleOpenBooking()}
-      />
+      <Header onOpenBooking={handleOpenBooking} />
 
-      {/* Main Page Body View Routing */}
+      {/* Page Routes */}
       <main className="flex-1">
-        {activePage === 'home' && (
-          <HomePage
-            onNavigate={handleNavigate}
-            onOpenBooking={() => handleOpenBooking('Hospitality Business Consultancy')}
+        <Routes>
+          <Route
+            path={ROUTES.home}
+            element={
+              <HomePage
+                onOpenBooking={() => handleOpenBooking('Hospitality Business Consultancy')}
+              />
+            }
           />
-        )}
-
-        {activePage === 'culinary-school' && (
-          <CulinarySchoolPage
-            onNavigate={handleNavigate}
-            onOpenBooking={() => handleOpenBooking('Culinary Training')}
+          <Route
+            path={ROUTES.culinarySchool}
+            element={
+              <CulinarySchoolPage
+                onOpenBooking={() => handleOpenBooking('Culinary Training')}
+              />
+            }
           />
-        )}
-
-        {activePage === 'catering' && (
-          <CateringPage
-            onNavigate={handleNavigate}
-            onOpenBooking={() => handleOpenBooking('Catering')}
+          <Route
+            path={ROUTES.catering}
+            element={
+              <CateringPage
+                onOpenBooking={() => handleOpenBooking('Catering')}
+              />
+            }
           />
-        )}
-
-        {activePage === 'event-management' && (
-          <EventManagementPage
-            onNavigate={handleNavigate}
-            onOpenBooking={() => handleOpenBooking('Event Management')}
+          <Route
+            path={ROUTES.eventManagement}
+            element={
+              <EventManagementPage
+                onOpenBooking={() => handleOpenBooking('Event Management')}
+              />
+            }
           />
-        )}
-
-        {activePage === 'cleaning' && (
-          <FacilityCleaningPage
-            onNavigate={handleNavigate}
-            onOpenBooking={() => handleOpenBooking('Facility Cleaning')}
+          <Route
+            path={ROUTES.facilityCleaning}
+            element={
+              <FacilityCleaningPage
+                onOpenBooking={() => handleOpenBooking('Facility Cleaning')}
+              />
+            }
           />
-        )}
-
-        {activePage === 'consultancy' && (
-          <ConsultancyPage
-            onNavigate={handleNavigate}
-            onOpenBooking={() => handleOpenBooking('Hospitality Business Consultancy')}
+          <Route
+            path={ROUTES.consultancy}
+            element={
+              <ConsultancyPage
+                onOpenBooking={() => handleOpenBooking('Hospitality Business Consultancy')}
+              />
+            }
           />
-        )}
-
-        {activePage === 'ceo' && (
-          <CEOPage
-            onNavigate={handleNavigate}
-            onOpenBooking={() => handleOpenBooking('Hospitality Business Consultancy')}
+          <Route
+            path={ROUTES.chefPeter}
+            element={
+              <CEOPage
+                onOpenBooking={() => handleOpenBooking('Hospitality Business Consultancy')}
+              />
+            }
           />
-        )}
-
-        {activePage === 'contact' && (
-          <ContactPage onNavigate={handleNavigate} />
-        )}
+          <Route
+            path={ROUTES.contact}
+            element={<ContactPage />}
+          />
+          {/* Catch-all 404 */}
+          <Route path="*" element={<NotFoundPage />} />
+        </Routes>
       </main>
 
       {/* Global Corporate Footer */}
-      <Footer
-        onNavigate={handleNavigate}
-        onOpenBooking={() => handleOpenBooking()}
-      />
+      <Footer onOpenBooking={handleOpenBooking} />
 
       {/* Global Booking Modal */}
       <AppointmentModal

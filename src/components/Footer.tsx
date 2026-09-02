@@ -1,35 +1,24 @@
 import React from 'react';
-import { PageId } from '../types';
+import { Link } from 'react-router-dom';
+import { ROUTES } from '../routes';
 import { COMPANY_INFO } from '../data/siteData';
 import { Phone, MapPin, ChevronRight, Instagram, Linkedin } from 'lucide-react';
 import { WhatsAppIcon } from './icons/WhatsAppIcon';
 import { EmailIcon } from './icons/EmailIcon';
 
 interface FooterProps {
-  onNavigate: (page: PageId) => void;
   onOpenBooking: () => void;
 }
 
-export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenBooking }) => {
-  const handleLinkClick = (pageId: PageId) => {
-    onNavigate(pageId);
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
-
+export const Footer: React.FC<FooterProps> = ({ onOpenBooking }) => {
   return (
     <footer className="bg-[#0F172A] text-slate-300 font-sans border-t-4 border-[#D99B26] pt-16 pb-8">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 pb-12 border-b border-slate-800">
-          
-          {/* Column 1: Brand & Slogans */}
+
+          {/* Column 1: Brand */}
           <div className="space-y-4">
-            {/* 
-              ====================================================================
-              ✏️ FOOTER LOGO CUSTOMIZATION:
-              Renders custom logo if COMPANY_INFO.logoUrl is set in siteData.ts
-              ====================================================================
-            */}
-            <div className="flex items-center space-x-3">
+            <Link to={ROUTES.home} className="flex items-center space-x-3">
               {COMPANY_INFO.logoUrl ? (
                 <img
                   src={COMPANY_INFO.logoUrl}
@@ -50,12 +39,12 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenBooking }) => 
                   EVENTS CONSULTANTS LIMITED
                 </p>
               </div>
-            </div>
-            
+            </Link>
+
             <p className="text-sm text-slate-400 italic font-serif leading-relaxed">
               "{COMPANY_INFO.slogan}"
             </p>
-            
+
             <p className="text-xs text-slate-400 leading-relaxed">
               Integrated hospitality, culinary training, event management, facility cleaning and operational consultancy enterprise.
             </p>
@@ -70,62 +59,34 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenBooking }) => 
             </div>
           </div>
 
-          {/* Column 2: Our Services */}
+          {/* Column 2: Services */}
           <div>
             <h4 className="font-serif font-bold text-white text-base mb-4 pb-2 border-b border-slate-800 flex items-center justify-between">
               <span>Our Services</span>
               <span className="w-8 h-0.5 bg-[#D99B26]"></span>
             </h4>
             <ul className="space-y-2.5 text-xs text-slate-300">
-              <li>
-                <button
-                  onClick={() => handleLinkClick('culinary-school')}
-                  className="hover:text-[#D99B26] flex items-center space-x-2 transition-colors cursor-pointer"
-                >
-                  <ChevronRight className="w-3.5 h-3.5 text-[#D99B26]" />
-                  <span>Dechosen Culinary School</span>
-                </button>
-              </li>
-              <li>
-                <button
-                  onClick={() => handleLinkClick('catering')}
-                  className="hover:text-[#D99B26] flex items-center space-x-2 transition-colors cursor-pointer"
-                >
-                  <ChevronRight className="w-3.5 h-3.5 text-[#D99B26]" />
-                  <span>On-Call & Event Catering</span>
-                </button>
-              </li>
-              <li>
-                <button
-                  onClick={() => handleLinkClick('event-management')}
-                  className="hover:text-[#D99B26] flex items-center space-x-2 transition-colors cursor-pointer"
-                >
-                  <ChevronRight className="w-3.5 h-3.5 text-[#D99B26]" />
-                  <span>Event Management & Advisory</span>
-                </button>
-              </li>
-              <li>
-                <button
-                  onClick={() => handleLinkClick('cleaning')}
-                  className="hover:text-[#D99B26] flex items-center space-x-2 transition-colors cursor-pointer"
-                >
-                  <ChevronRight className="w-3.5 h-3.5 text-[#D99B26]" />
-                  <span>Facility Cleaning Services</span>
-                </button>
-              </li>
-              <li>
-                <button
-                  onClick={() => handleLinkClick('consultancy')}
-                  className="hover:text-[#D99B26] flex items-center space-x-2 transition-colors cursor-pointer"
-                >
-                  <ChevronRight className="w-3.5 h-3.5 text-[#D99B26]" />
-                  <span>Hospitality Business Consultancy</span>
-                </button>
-              </li>
+              {[
+                { to: ROUTES.culinarySchool,   label: 'Dechosen Culinary School' },
+                { to: ROUTES.catering,          label: 'On-Call & Event Catering' },
+                { to: ROUTES.eventManagement,   label: 'Event Management & Advisory' },
+                { to: ROUTES.facilityCleaning,  label: 'Facility Cleaning Services' },
+                { to: ROUTES.consultancy,       label: 'Hospitality Business Consultancy' },
+              ].map(({ to, label }) => (
+                <li key={to}>
+                  <Link
+                    to={to}
+                    className="hover:text-[#D99B26] flex items-center space-x-2 transition-colors"
+                  >
+                    <ChevronRight className="w-3.5 h-3.5 text-[#D99B26]" />
+                    <span>{label}</span>
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
 
-          {/* Column 3: Company Links */}
+          {/* Column 3: Company */}
           <div>
             <h4 className="font-serif font-bold text-white text-base mb-4 pb-2 border-b border-slate-800 flex items-center justify-between">
               <span>Company</span>
@@ -133,31 +94,31 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenBooking }) => 
             </h4>
             <ul className="space-y-2.5 text-xs text-slate-300">
               <li>
-                <button
-                  onClick={() => handleLinkClick('home')}
-                  className="hover:text-[#D99B26] flex items-center space-x-2 transition-colors cursor-pointer"
+                <Link
+                  to={ROUTES.home}
+                  className="hover:text-[#D99B26] flex items-center space-x-2 transition-colors"
                 >
                   <ChevronRight className="w-3.5 h-3.5 text-[#D99B26]" />
                   <span>About D'E Chosen</span>
-                </button>
+                </Link>
               </li>
               <li>
-                <button
-                  onClick={() => handleLinkClick('ceo')}
-                  className="hover:text-[#D99B26] flex items-center space-x-2 transition-colors cursor-pointer"
+                <Link
+                  to={ROUTES.chefPeter}
+                  className="hover:text-[#D99B26] flex items-center space-x-2 transition-colors"
                 >
                   <ChevronRight className="w-3.5 h-3.5 text-[#D99B26]" />
                   <span>Meet Chef Peter (CEO)</span>
-                </button>
+                </Link>
               </li>
               <li>
-                <button
-                  onClick={() => handleLinkClick('contact')}
-                  className="hover:text-[#D99B26] flex items-center space-x-2 transition-colors cursor-pointer"
+                <Link
+                  to={ROUTES.contact}
+                  className="hover:text-[#D99B26] flex items-center space-x-2 transition-colors"
                 >
                   <ChevronRight className="w-3.5 h-3.5 text-[#D99B26]" />
                   <span>Contact & Location</span>
-                </button>
+                </Link>
               </li>
               <li>
                 <button
@@ -171,13 +132,13 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenBooking }) => 
             </ul>
           </div>
 
-          {/* Column 4: Contact & Placeholders */}
+          {/* Column 4: Contact */}
           <div className="space-y-3">
             <h4 className="font-serif font-bold text-white text-base mb-4 pb-2 border-b border-slate-800 flex items-center justify-between">
               <span>Contact Us</span>
               <span className="w-8 h-0.5 bg-[#D99B26]"></span>
             </h4>
-            
+
             <div className="space-y-3 text-xs text-slate-300">
               <div className="flex items-start space-x-3">
                 <MapPin className="w-4 h-4 text-[#D99B26] shrink-0 mt-0.5" />
@@ -185,19 +146,33 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenBooking }) => 
               </div>
               <div className="flex items-center space-x-3">
                 <Phone className="w-4 h-4 text-[#D99B26] shrink-0" />
-                <span>{COMPANY_INFO.phonePlaceholder}</span>
+                <a href={`tel:${COMPANY_INFO.phonePlaceholder.split('/')[0].trim()}`} className="hover:text-[#D99B26] transition-colors">
+                  {COMPANY_INFO.phonePlaceholder}
+                </a>
               </div>
               <div className="flex items-center space-x-3">
                 <WhatsAppIcon className="w-4 h-4 text-[#25D366] shrink-0 fill-current" />
-                <span>WhatsApp: {COMPANY_INFO.whatsappPlaceholder}</span>
+                <a
+                  href={`https://wa.me/${COMPANY_INFO.whatsappPlaceholder.replace(/[^0-9]/g, '')}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-[#D99B26] transition-colors"
+                >
+                  WhatsApp: {COMPANY_INFO.whatsappPlaceholder}
+                </a>
               </div>
               <div className="flex items-center space-x-3">
                 <EmailIcon className="w-4 h-4 text-[#D99B26] shrink-0 fill-current" />
-                <span>{COMPANY_INFO.emailPlaceholder}</span>
+                <a
+                  href={`mailto:${COMPANY_INFO.emailPlaceholder}`}
+                  className="hover:text-[#D99B26] transition-colors"
+                >
+                  {COMPANY_INFO.emailPlaceholder}
+                </a>
               </div>
             </div>
 
-            {/* Social Links Placeholders */}
+            {/* Social links */}
             <div className="pt-3">
               <p className="text-[11px] text-slate-400 uppercase font-semibold mb-2">
                 Connect With Us
