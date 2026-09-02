@@ -23,7 +23,7 @@ export const CateringPage: React.FC<CateringPageProps> = ({ onNavigate, onOpenBo
         <div className="absolute inset-0 z-0">
           <img
             src={UNSPLASH_IMAGES.cateringHero}
-            alt="D'E Chosen On-Call & Event Catering"
+            alt="D'E Chosen on-call and event catering services in Uganda"
             referrerPolicy="no-referrer"
             className="w-full h-full object-cover opacity-25"
           />
@@ -99,6 +99,7 @@ export const CateringPage: React.FC<CateringPageProps> = ({ onNavigate, onOpenBo
                       src={cat.image}
                       alt={cat.title}
                       referrerPolicy="no-referrer"
+                      loading="lazy"
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                     />
                     <div className="absolute top-4 left-4 bg-[#1B365D] text-[#D99B26] font-bold text-xs px-3 py-1 rounded shadow-md uppercase tracking-wider">

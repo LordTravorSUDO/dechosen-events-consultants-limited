@@ -71,6 +71,7 @@ export const GallerySection: React.FC = () => {
                   src={item.imageUrl}
                   alt={item.title}
                   referrerPolicy="no-referrer"
+                  loading="lazy"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#1B365D]/80 via-[#1B365D]/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
@@ -130,6 +131,7 @@ export const GallerySection: React.FC = () => {
                   src={activeItem.imageUrl}
                   alt={activeItem.title}
                   referrerPolicy="no-referrer"
+                  loading="lazy"
                   className="w-full h-full object-contain"
                 />
               </div>
@@ -147,8 +149,7 @@ export const GallerySection: React.FC = () => {
                 <p className="text-sm text-slate-300 mt-2 leading-relaxed">
                   {activeItem.caption}
                 </p>
-                <div className="mt-4 pt-4 border-t border-slate-800 text-xs text-slate-400 flex items-center justify-between">
-                  <span>Image Placeholder — Ready for D'E Chosen photography updates</span>
+                <div className="mt-4 pt-4 border-t border-slate-800 text-xs text-slate-400 flex items-center justify-end">
                   <button
                     onClick={() => setActiveItem(null)}
                     className="text-[#D99B26] font-semibold hover:underline"

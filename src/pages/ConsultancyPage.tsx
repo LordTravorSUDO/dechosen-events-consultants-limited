@@ -23,7 +23,7 @@ export const ConsultancyPage: React.FC<ConsultancyPageProps> = ({ onNavigate, on
         <div className="absolute inset-0 z-0">
           <img
             src={UNSPLASH_IMAGES.consultancyHero}
-            alt="D'E Chosen Hospitality Business Consultancy"
+            alt="D'E Chosen hospitality business consultancy — hotel and restaurant advisory services in Uganda"
             referrerPolicy="no-referrer"
             className="w-full h-full object-cover opacity-25"
           />

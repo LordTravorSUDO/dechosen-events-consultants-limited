@@ -46,7 +46,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onOpenBooking })
             <div className="col-span-12 lg:col-span-8 relative overflow-hidden bg-[#1B365D] rounded-2xl border border-slate-700 shadow-xl min-h-[440px] flex flex-col justify-between p-6 sm:p-10 group">
               <img
                 src={UNSPLASH_IMAGES.homeHero}
-                alt="D'E Chosen Events Consultants Operations"
+                alt="D'E Chosen Events Consultants — professional events, catering and hospitality services in Uganda"
                 referrerPolicy="no-referrer"
                 className="absolute inset-0 w-full h-full object-cover opacity-35 group-hover:scale-105 transition-transform duration-700"
               />
@@ -60,13 +60,15 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onOpenBooking })
               </div>
 
               <div className="relative z-10 max-w-2xl mt-8">
-                <h1 className="text-white font-serif text-3xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-4">
-                  Excellence Beyond <br />
-                  <span className="text-[#D99B26]">the Event.</span>
+                <h1 className="text-white font-serif text-3xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-2">
+                  D'E Chosen Events Consultants
                 </h1>
+                <p className="text-[#D99B26] font-serif text-xl sm:text-2xl font-semibold mb-4">
+                  Excellence Beyond the Event — Uganda
+                </p>
 
                 <p className="text-slate-200 text-xs sm:text-sm leading-relaxed mb-6 max-w-xl">
-                  Integrated hospitality, culinary training, event management and operational consultancy designed to deliver exceptional experiences and stronger businesses.
+                  Professional event management, catering, culinary training, facility cleaning and hospitality consultancy — serving corporate organisations, private clients and hospitality businesses across Uganda, from our base on Entebbe Road.
                 </p>
 
                 <div className="flex flex-wrap gap-3">
@@ -140,8 +142,9 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onOpenBooking })
             <div className="col-span-12 lg:col-span-4 bg-[#4A777A] text-white rounded-2xl p-6 sm:p-8 relative overflow-hidden shadow-md flex flex-col justify-between group">
               <img
                 src={UNSPLASH_IMAGES.corporateIntro}
-                alt="Chef Peter"
+                alt="Chef Peter, Founder and CEO of D'E Chosen Events Consultants"
                 referrerPolicy="no-referrer"
+                loading="lazy"
                 className="absolute inset-0 w-full h-full object-cover opacity-20 group-hover:scale-105 transition-transform duration-700"
               />
               <div className="relative z-10 flex flex-col justify-between h-full space-y-6">
@@ -317,8 +320,9 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onOpenBooking })
               <div className="relative rounded-xl overflow-hidden shadow-2xl border-2 border-[#D99B26]/30">
                 <img
                   src={UNSPLASH_IMAGES.corporateIntro}
-                  alt="D'E Chosen Hospitality Operations"
+                  alt="D'E Chosen Events Consultants — integrated hospitality operations in Uganda"
                   referrerPolicy="no-referrer"
+                  loading="lazy"
                   className="w-full h-[450px] object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#1B365D]/60 via-transparent to-transparent"></div>
@@ -417,6 +421,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onOpenBooking })
                       src={div.image}
                       alt={div.title}
                       referrerPolicy="no-referrer"
+                      loading="lazy"
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                     />
                     <div className="absolute top-4 left-4 bg-[#1B365D] text-[#D99B26] font-serif font-bold text-xs px-3 py-1 rounded shadow-md">

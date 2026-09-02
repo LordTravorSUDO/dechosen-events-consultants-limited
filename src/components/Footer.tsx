@@ -1,7 +1,7 @@
 import React from 'react';
 import { PageId } from '../types';
 import { COMPANY_INFO } from '../data/siteData';
-import { Phone, MapPin, ChevronRight, Facebook, Instagram, Linkedin, Youtube } from 'lucide-react';
+import { Phone, MapPin, ChevronRight, Instagram, Linkedin } from 'lucide-react';
 import { WhatsAppIcon } from './icons/WhatsAppIcon';
 import { EmailIcon } from './icons/EmailIcon';
 
@@ -34,6 +34,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenBooking }) => 
                 <img
                   src={COMPANY_INFO.logoUrl}
                   alt={COMPANY_INFO.name}
+                  loading="lazy"
                   className="h-10 w-auto object-contain max-w-[160px]"
                 />
               ) : (
@@ -203,15 +204,6 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenBooking }) => 
               </p>
               <div className="flex items-center space-x-2">
                 <a
-                  href={COMPANY_INFO.socials.facebook}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-8 h-8 rounded bg-slate-800 hover:bg-[#D99B26] hover:text-slate-950 flex items-center justify-center transition-colors"
-                  aria-label="Facebook"
-                >
-                  <Facebook className="w-4 h-4" />
-                </a>
-                <a
                   href={COMPANY_INFO.socials.instagram}
                   target="_blank"
                   rel="noopener noreferrer"
@@ -228,15 +220,6 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenBooking }) => 
                   aria-label="LinkedIn"
                 >
                   <Linkedin className="w-4 h-4" />
-                </a>
-                <a
-                  href={COMPANY_INFO.socials.youtube}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-8 h-8 rounded bg-slate-800 hover:bg-[#D99B26] hover:text-slate-950 flex items-center justify-center transition-colors"
-                  aria-label="YouTube"
-                >
-                  <Youtube className="w-4 h-4" />
                 </a>
               </div>
             </div>

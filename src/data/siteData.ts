@@ -39,11 +39,9 @@ export const COMPANY_INFO = {
   
   /* 🌐 SOCIAL MEDIA LINKS (Replace with your official account URLs): */
   socials: {
-    facebook: "https://facebook.com/your-page",
     instagram: "https://www.instagram.com/dechosenevents/",
     tiktok: "https://www.tiktok.com/@dechosenevents",
-    linkedin: "https://www.linkedin.com/in/yiga-edward-peter-49b09b433/",
-    youtube: "https://youtube.com/@your-channel"
+    linkedin: "https://www.linkedin.com/in/yiga-edward-peter-49b09b433/"
   }
 };
 

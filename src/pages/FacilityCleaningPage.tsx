@@ -65,7 +65,7 @@ export const FacilityCleaningPage: React.FC<FacilityCleaningPageProps> = ({ onNa
         <div className="absolute inset-0 z-0">
           <img
             src={UNSPLASH_IMAGES.cleaningHero}
-            alt="D'E Chosen Professional Facility Cleaning"
+            alt="D'E Chosen professional facility cleaning services — corporate and residential sanitation in Uganda"
             referrerPolicy="no-referrer"
             className="w-full h-full object-cover opacity-25"
           />
@@ -132,6 +132,7 @@ export const FacilityCleaningPage: React.FC<FacilityCleaningPageProps> = ({ onNa
                     src={cs.image}
                     alt={cs.title}
                     referrerPolicy="no-referrer"
+                    loading="lazy"
                     className="w-full h-full object-cover"
                   />
                   <div className="absolute top-4 left-4 bg-[#1B365D] text-[#D99B26] font-bold text-xs px-3 py-1 rounded shadow-md uppercase">

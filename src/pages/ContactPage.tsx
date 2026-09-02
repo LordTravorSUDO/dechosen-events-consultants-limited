@@ -427,8 +427,9 @@ export const ContactPage: React.FC<ContactPageProps> = () => {
               <div className="bg-slate-900 rounded-xl overflow-hidden border border-slate-800 shadow-xl relative group">
                 <img
                   src={PAGE_HERO_IMAGES.contact}
-                  alt="D'E Chosen Office Location Map Placeholder"
+                  alt="D'E Chosen Events Consultants — Mpala, Entebbe Road, Uganda office location"
                   referrerPolicy="no-referrer"
+                  loading="lazy"
                   className="w-full h-64 object-cover opacity-80 group-hover:scale-105 transition-transform duration-500"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#0F172A] via-transparent to-transparent flex items-end p-6">

@@ -31,9 +31,6 @@ export const TestimonialCarousel: React.FC = () => {
           <h2 className="font-serif font-bold text-2xl sm:text-3xl text-white mt-1">
             Voices of Trust & Satisfaction
           </h2>
-          <div className="mt-2 inline-block bg-[#D99B26]/20 border border-[#D99B26]/40 text-[#D99B26] text-[11px] font-bold uppercase tracking-wider px-3 py-1 rounded">
-            CLIENT TESTIMONIAL PLACEHOLDERS
-          </div>
         </div>
 
         {/* Carousel Card */}
@@ -41,18 +38,16 @@ export const TestimonialCarousel: React.FC = () => {
           <Quote className="absolute top-6 right-6 w-16 h-16 text-[#D99B26]/15 pointer-events-none" />
 
           <div className="flex flex-col md:flex-row items-center gap-8">
-            {/* Avatar / Placeholder Image */}
+            {/* Avatar */}
             <div className="shrink-0 relative">
               <div className="w-24 h-24 rounded-full border-2 border-[#D99B26] overflow-hidden bg-slate-800 shadow-md">
                 <img
                   src={current.image}
                   alt={current.name}
                   referrerPolicy="no-referrer"
+                  loading="lazy"
                   className="w-full h-full object-cover"
                 />
-              </div>
-              <div className="absolute -bottom-2 -right-2 bg-[#D99B26] text-slate-950 text-[10px] font-bold px-2 py-0.5 rounded uppercase">
-                Verified
               </div>
             </div>
 
@@ -72,9 +67,6 @@ export const TestimonialCarousel: React.FC = () => {
               <div>
                 <h4 className="font-bold text-white text-base flex items-center justify-center md:justify-start gap-2">
                   <span>{current.name}</span>
-                  <span className="text-xs font-mono text-[#D99B26] font-normal">
-                    (Editable Placeholder)
-                  </span>
                 </h4>
                 <p className="text-xs text-[#4A777A] font-semibold mt-0.5">
                   {current.role} — <span className="text-slate-400">{current.company}</span>

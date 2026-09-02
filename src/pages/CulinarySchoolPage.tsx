@@ -23,7 +23,7 @@ export const CulinarySchoolPage: React.FC = ({ onNavigate, onOpenBooking }) => {
         <div className="absolute inset-0 z-0">
           <img
             src={UNSPLASH_IMAGES.culinaryHero}
-            alt="Dechosen Culinary School Masterclass"
+            alt="Dechosen Culinary School — professional culinary arts training in Uganda"
             referrerPolicy="no-referrer"
             className="w-full h-full object-cover opacity-25"
           />

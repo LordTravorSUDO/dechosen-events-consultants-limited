@@ -58,7 +58,7 @@ export const EventManagementPage: React.FC = ({ onNavigate, onOpenBooking }) => 
         <div className="absolute inset-0 z-0">
           <img
             src={UNSPLASH_IMAGES.eventHero}
-            alt="D'E Chosen Event Management & Advisory"
+            alt="D'E Chosen event management and advisory services — weddings, corporate events and Kwanjula ceremonies in Uganda"
             referrerPolicy="no-referrer"
             className="w-full h-full object-cover opacity-25"
           />
