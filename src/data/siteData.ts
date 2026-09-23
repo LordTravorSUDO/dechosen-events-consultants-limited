@@ -64,14 +64,14 @@ export const PAGE_HERO_IMAGES = {
 
 /* 📸 HIGH-DEFINITION PHOTOGRAPHY URLS (Replace with your own custom media): */
 export const UNSPLASH_IMAGES = {
-  homeHero: "https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&w=1800&q=80",
+  homeHero: "/images/livecooking.jfif",
   corporateIntro: "https://images.unsplash.com/photo-1555244162-803834f70033?auto=format&fit=crop&w=1200&q=80",
-  culinaryHero: "https://images.unsplash.com/photo-1556910103-1c02745aae4d?auto=format&fit=crop&w=1800&q=80",
-  cateringHero: "https://images.unsplash.com/photo-1555244162-803834f70033?auto=format&fit=crop&w=1800&q=80",
-  eventHero: "https://images.unsplash.com/photo-1519167758481-83f550bb49b3?auto=format&fit=crop&w=1800&q=80",
-  cleaningHero: "https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=1800&q=80",
-  consultancyHero: "https://images.unsplash.com/photo-1542744801-30d071850fbf?auto=format&fit=crop&w=1800&q=80",
-  chefPeterPortrait: "https://images.unsplash.com/photo-1577219491135-ce391730fb2c?auto=format&fit=crop&w=900&q=80"
+  culinaryHero: "/images/culinaryschool.jfif",
+  cateringHero: "/images/private.jfif",
+  eventHero: "/images/chef.jfif",
+  cleaningHero: "/images/domestic.jfif",
+  consultancyHero: "/images/hospitality.jfif",
+  chefPeterPortrait: "/images/Uncle Eddy.jpeg"
 };
 
 export const CORE_DIVISIONS: ServiceDivision[] = [
