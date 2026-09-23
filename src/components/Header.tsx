@@ -3,6 +3,7 @@ import { PageId } from '../types';
 import { COMPANY_INFO } from '../data/siteData';
 import { Menu, X, Calendar, ChevronRight } from 'lucide-react';
 import { WhatsAppIcon } from './icons/WhatsAppIcon';
+import { PAGE_PATHS } from '../seo';
 
 interface HeaderProps {
   activePage: PageId;
@@ -43,6 +44,12 @@ export const Header: React.FC<HeaderProps> = ({ activePage, onNavigate, onOpenBo
 
   return (
     <header className="sticky top-0 z-50 w-full font-sans transition-all duration-300">
+      {/* Crawlable route links ensure search engines can discover every real page. */}
+      <nav aria-label="SEO site navigation" className="sr-only">
+        {navItems.map((item) => (
+          <a key={item.id} href={PAGE_PATHS[item.id]}>{item.label}</a>
+        ))}
+      </nav>
       {/* Top Utility Bar (Shows clean WhatsApp quick action button) */}
       <div className="bg-[#0F172A] text-slate-300 text-xs py-1.5 px-4 sm:px-6 border-b border-slate-800">
         <div className="max-w-7xl mx-auto flex justify-end items-center">
